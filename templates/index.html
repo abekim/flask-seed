@@ -1,0 +1,25 @@
+{# declare inheritance #}
+{% extends "layout.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Task Manager 1.0!</h1>
+    <div class="tdlist">
+        {% for task in tdlist %}
+            <div class="description" id="task.id">
+                {{ task.description }}
+                <div class="delete"></div>
+            </div>
+            <!-- <input name="is_complete" type="checkbox" checked={{ task.completed }} /> -->
+        {% endfor %}
+        <input class="description" name="new_task" type="text" />
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
