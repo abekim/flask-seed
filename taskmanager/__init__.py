@@ -1,15 +1,15 @@
-import os
 from flask import Flask, render_template
+from flask.ext.mongoengine import MongoEngine
 
 app = Flask(__name__)
-
-# dev mode
 app.debug = True
+
+app.config["MONGODB_SETTINGS"] = {
+    'DB': 'Tasks'
+}
+
+db = MongoEngine(app)
 
 @app.route("/")
 def hello():
     return render_template("index.html", title="Welcome")
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host = "0.0.0.0", port=port)
