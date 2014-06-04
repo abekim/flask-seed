@@ -1,3 +1,8 @@
+#
+# author: Cory Dolphin
+# @wcdolphin
+#
+
 from flask import Flask
 from flask.json import JSONEncoder
 from bson import json_util

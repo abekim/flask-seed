@@ -1,11 +1,14 @@
 {# declare inheritance #}
 {% extends "layout.html" %}
 
+
 {% block title %}{{ title }}{% endblock %}
+
 
 {% block head %}
     {{ super() }}
 {% endblock %}
+
 
 {% block content %}
     <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
@@ -25,5 +28,7 @@
     </table>
 {% endblock %}
 
+
 {% block footer %}
+    {{ super() }}
 {% endblock %}

@@ -2,7 +2,10 @@ from flask import Flask, render_template, jsonify, request
 from flask.ext.mongoengine import MongoEngine
 from taskmanager.json_encoder import MongoEngineJSONEncoder
 
+# initialize app
 app = Flask(__name__)
+
+# configurations
 app.debug = True
 app.json_encoder = MongoEngineJSONEncoder
 
@@ -16,10 +19,13 @@ if not app.debug:
     app.logger.addHandler(stream_handler)
     app.logger.setLevel(logging.DEBUG)
 
+# initialize db
 db = MongoEngine(app)
 
+# import models
 from taskmanager.models import Task
 
+# routes
 @app.route("/")
 def hello():
     return render_template("index.html", title="Welcome", tasks=Task.objects())
