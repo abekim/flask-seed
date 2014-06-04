@@ -8,23 +8,21 @@
 {% endblock %}
 
 {% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
     <h1 class="depth" title="Welcome to Task Manager 1.0!">Welcome to Task Manager 1.0!</h1>
-    <div class="tdlist">
-        <div class="tdlist-header"></div>
-        <ol class="tasks">
-            {% for task in tdlist %}
-            <li class="description row" id="task.id">
-                <div class="view">
-                    <a class="small-1 large-1 destroy">✕</a>
-                    <label class="small-1 large-1"><input class="toggle" type="checkbox"></label><span class="small-10 large-10">{{ task.description }}</span>
-                </div>
-                <input class="edit todo-input" type="text" value="{{ task.description }}">
-            </li>
-            <!-- <input name="is_complete" type="checkbox" checked={{ task.completed }} /> -->
+    <table class="small-6 large-6" id="tasks">
+        <tbody>
+            <tr>
+                <td colspan=2><input class="description" id="new_task" type="text" autofocus></td>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td><input class="toggle" type="checkbox"></td>
+                <td>{{ task.description }}</td>
+            </tr>
             {% endfor %}
-        </ol>
-        <input class="description" name="new_task" type="text" />
-    </div>
+        </tbody>
+    </table>
 {% endblock %}
 
 {% block footer %}
