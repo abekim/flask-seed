@@ -32,32 +32,15 @@ ol {
     margin: auto;
 }
 
-.destroy {
-    margin-right: -5px;
-    padding: 0 5px;
-    float: right;
-    visibility: hidden;
-    border: 1px solid rgba(255,255,255,0);
-    border-radius: 100px;
-    cursor: pointer;
-    font-size: 10px;
-    -webkit-transition: all 0.2s ease-in;
-}
-
 label {
-    position: absolute;
-    left: 0;
-    top: 0;
     height: 100%;
-    margin-left: -15px;
-    padding: 0 5px 0 15px;
-    line-height: 14px;
 }
 
 .description {
     margin: 0px !important;
 }
 
-.hide {
-    display: none;
+#footer {
+    padding-top: 40px;
+    color: #DDD;
 }
